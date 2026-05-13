@@ -1,55 +1,171 @@
-# UN Website Boilerplate
+# UN Logo API
 
-https://github.com/kleinlennart/un-website-boilerplate
+A Next.js application that serves as both an interactive logo selector UI and a REST API for UN system entity logos.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Repository:** https://github.com/united-nations/logos
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) for the logo selector UI.  
+The API is available at [http://localhost:3000/api/logos](http://localhost:3000/api/logos).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## API Reference
 
-## Learn More
+### List all logos
 
-To learn more about Next.js, take a look at the following resources:
+```
+GET /api/logos
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Returns all UN entities that have at least one logo available.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Query parameters:**
 
-## Deploy on Vercel
+| Parameter | Values | Default | Description |
+|-----------|--------|---------|-------------|
+| `mode` | `light` \| `dark` \| `all` | `all` | Filter by color mode |
+| `format` | `svg` \| `png` \| `jpg` \| `pdf` | — | Filter by file format |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Example requests:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# All available logos
+GET /api/logos
 
+# SVG logos in light mode only
+GET /api/logos?mode=light&format=svg
+```
 
-## Good to know
+**Example response:**
 
-- https://nextjs.org/docs/app/api-reference/file-conventions/src-folder
-- https://nextjs.org/docs/app/getting-started/project-structure
+```json
+{
+  "count": 1,
+  "entities": [
+    {
+      "entity": "UN",
+      "entity_long": "United Nations",
+      "un_principal_organ": null,
+      "system_grouping": null,
+      "logos": {
+        "light": [
+          { "format": "svg", "url": "/images/light/un.svg" },
+          { "format": "png", "url": "/images/light/un.png" }
+        ],
+        "dark": [
+          { "format": "svg", "url": "/images/dark/un.svg" },
+          { "format": "png", "url": "/images/dark/un.png" }
+        ]
+      }
+    }
+  ]
+}
+```
 
-- The `/public` directory should remain in the root of your project.
-- Config files like `package.json`, `next.config.js` and `tsconfig.json` should remain in the root of your project.
-- `.env.*` files should remain in the root of your project.
-- `src/app` or `src/pages` will be ignored if `app` or `pages` are present in the root directory.
-- If you are using a `src` directory, consider moving other application folders such as `/components` or `/lib` into `src` for consistency.
-- If you are using a Proxy, ensure it is placed inside the `src` folder.
-- When using Tailwind CSS, add the `/src` prefix to the `content` array in your `tailwind.config.js` file to ensure proper scanning.
-- If you use TypeScript path aliases like `@/*`, update the `paths` object in `tsconfig.json` to include `src/`.
+---
+
+### Get a specific entity's logos
+
+```
+GET /api/logos/{entity}
+```
+
+Returns logo URLs and metadata for one entity. Entity codes are case-insensitive.
+
+**Example requests:**
+
+```bash
+GET /api/logos/UN
+GET /api/logos/unicef?mode=dark&format=svg
+```
+
+**Example response:**
+
+```json
+{
+  "entity": "UN",
+  "entity_long": "United Nations",
+  "entity_description": "...",
+  "un_principal_organ": null,
+  "system_grouping": null,
+  "category": null,
+  "logos": {
+    "light": [
+      { "format": "svg", "url": "/images/light/un.svg" },
+      { "format": "png", "url": "/images/light/un.png" }
+    ],
+    "dark": [
+      { "format": "svg", "url": "/images/dark/un.svg" },
+      { "format": "png", "url": "/images/dark/un.png" }
+    ]
+  }
+}
+```
+
+Returns `404` if the entity code is not found or no logos match the filters.
+
+---
+
+## Logo File Structure
+
+Static logo files are served directly from `/public/images/`:
+
+```
+public/images/
+  light/
+    {entity}.svg
+    {entity}.png
+  dark/
+    {entity}.svg
+    {entity}.png
+```
+
+Files are accessible as static assets at the same URL paths (e.g. `/images/light/un.svg`).  
+Entity codes in filenames are lowercased (e.g. `UNICEF` → `unicef.svg`).
+
+---
+
+## Adding Logos
+
+1. Place logo files in `public/images/light/` and/or `public/images/dark/`
+2. Name them `{entity_code_lowercase}.{format}` (e.g. `unicef.svg`)
+3. Ensure the entity exists in `public/data/un-entities.csv`
+
+The API automatically reflects any new files — no code changes required.
+
+---
+
+## Deployment
+
+### Server mode (default) — API enabled
+
+Deploy to [Vercel](https://vercel.com), a Node.js server, or any platform that supports Next.js server-side rendering.
+
+```bash
+npm run build
+npm start
+```
+
+Set `BASE_PATH` to your subdirectory if serving under a path prefix:
+
+```bash
+BASE_PATH=/logos npm run build
+```
+
+### Static export — UI only, no API
+
+For GitHub Pages or other static hosts. API routes are not available in this mode.
+
+```bash
+STATIC_EXPORT=true BASE_PATH=/logos npm run build
+# Output is in the `out/` directory
+```

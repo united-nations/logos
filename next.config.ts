@@ -1,16 +1,19 @@
 import type { NextConfig } from 'next'
 
-// Set to your repository name for GitHub Pages, or '' for custom domain
-const basePath = process.env.NODE_ENV === 'production' ? (process.env.BASE_PATH || '/un-website-boilerplate') : ''
+// Set to your repository name for GitHub Pages, or '' for custom domain / Vercel
+const basePath = process.env.NODE_ENV === 'production' ? (process.env.BASE_PATH || '') : ''
 
-// NOTE: use basePath variable for Image src 
-// https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath#images
+// DEPLOYMENT MODES:
+// - Server mode (default): supports API routes at /api/logos — deploy to Vercel, Node server, etc.
+// - Static export (GitHub Pages): set STATIC_EXPORT=true — API routes are NOT available
+//   Add `output: 'export'` and `trailingSlash: true` below for static export.
+
+const isStaticExport = process.env.STATIC_EXPORT === 'true'
 
 const nextConfig: NextConfig = {
-    output: 'export',
-    trailingSlash: true,
+    ...(isStaticExport ? { output: 'export', trailingSlash: true } : {}),
     basePath: basePath,
-    assetPrefix: basePath,
+    assetPrefix: basePath || undefined,
     images: {
         unoptimized: true
     },
