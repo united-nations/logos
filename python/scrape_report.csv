@@ -1,0 +1,164 @@
+entity,status,source,filename,formats
+UN,skipped,,,
+ASMT,no_wikipedia,,,
+BINUH,no_wikidata,,,
+CEB,no_wikidata,,,
+CNMC,no_wikipedia,,,
+CTBTO,no_wikidata,,,
+CTED,no_wikidata,,,
+DA,no_wikidata,,,
+DCO,no_wikidata,,,
+DESA,downloaded,wikidata_P154,Logo for the United Nations Department of Economic and Social Affairs.png,png
+DGACM,no_wikidata,,,
+DGC,no_logo_found,,,
+DMSPC,no_wikidata,,,
+DOS,no_wikidata,,,
+DPO,no_logo_found,,,
+DPPA,no_logo_found,,,
+DSS,no_wikidata,,,
+ECA,downloaded,wikidata_P154,UN emblem blue.svg,"svg,png"
+ECE,downloaded,wikidata_P154,United Nations Economic and Social Commission for Europe Logo.svg,"svg,png"
+ECLAC,no_wikidata,,,
+EO,no_wikidata,,,
+EOSG,no_wikidata,,,
+ESCAP,no_logo_found,,,
+ESCWA,no_logo_found,,,
+FAO,downloaded,wikidata_P154,FAO logo.svg,"svg,png"
+GoE-DRC,no_wikidata,,,
+IAEA,downloaded,wikidata_P154,International Atomic Energy Agency Logo.svg,"svg,png"
+ICAO,downloaded,wikidata_P154,ICAO logo.svg,"svg,png"
+ICC,downloaded,wikidata_P154,International Criminal Court logo.svg,"svg,png"
+ICJ,downloaded,wikidata_P154,International Court of Justice Seal.svg,"svg,png"
+ICSC,no_logo_found,,,
+IFAD,downloaded,wikidata_P154,IFAD logo.svg,"svg,png"
+IIIM,no_wikidata,,,
+IIMM,no_wikidata,,,
+IIMP,no_wikipedia,,,
+ILO,no_logo_found,,,
+IMF,downloaded,wikidata_P154,IMF-Seal ENG RGB.svg,"svg,png"
+IMO,downloaded,wikidata_P154,Logo International Maritime Organization (2025).png,png
+IOM,downloaded,wikidata_P154,Logo der International Organization for Migration (IOM).jpg,jpg
+ISA,downloaded,wikidata_P154,International Seabed Authority Logo.svg,"svg,png"
+ITC,downloaded,wikidata_P154,International Trade Centre Logo.svg,"svg,png"
+ITLOS,downloaded,wikidata_P154,ITLOS logo.svg,"svg,png"
+ITU,downloaded,wikidata_P154,International Telecommunication Union logo.svg,"svg,png"
+JIU,no_logo_found,,,
+MINURSO,no_logo_found,,,
+MINUSCA,no_wikidata,,,
+MONUSCO,no_wikidata,,,
+OAJ,no_logo_found,,,
+OCHA,no_logo_found,,,
+ODA,downloaded,wikidata_P154,ODA-Masthead-Transparent-en (1).png,png
+ODET,no_wikipedia,,,
+ODPP,no_wikipedia,,,
+OFP-Delisting,no_wikipedia,,,
+OHCHR,no_logo_found,,,
+OICT,no_wikidata,,,
+OIOS,no_wikidata,,,
+OLA,downloaded,wikidata_P154,United Nations Office of Legal Affairs Logo.svg,"svg,png"
+OMBUD-RES1904,no_wikipedia,,,
+OMS,no_wikidata,,,
+OOSA,downloaded,wikidata_P154,United Nations Office for Outer Space Affairs Logo.svg,"svg,png"
+OPCW,downloaded,wikidata_P154,Organisation for the Prohibition of Chemical Weapons logo (cropped).jpg,jpg
+OSAA,no_wikidata,,,
+OSACAJT,no_wikipedia,,,
+OSASG-Cyprus,no_wikidata,,,
+OSASG-PG,no_wikidata,,,
+OSC-SEA,no_wikipedia,,,
+OSESG-FG,no_wikipedia,,,
+OSESG-GL,no_wikidata,,,
+OSESG-Horn,no_wikipedia,,,
+OSESG-Myanmar,no_wikipedia,,,
+OSESG-SCRES1559,no_wikipedia,,,
+OSESG-Syria,no_wikidata,,,
+OSESG-Yemen,no_logo_found,,,
+OSRSG-CAAC,no_wikidata,,,
+OSRSG-SVC,no_logo_found,,,
+OSRSG-VAC,no_wikidata,,,
+OVRA,no_wikipedia,,,
+PBSO,no_wikipedia,,,
+PESG-Sudan,no_wikipedia,,,
+PESG-WS,no_wikipedia,,,
+PoE-CAR,no_wikipedia,,,
+PoE-Haiti,no_wikipedia,,,
+PoE-Libya,no_wikipedia,,,
+PoE-RES2713,no_wikipedia,,,
+PoE-RES2745,no_wikipedia,,,
+PoE-S.Sudan,no_wikipedia,,,
+PoE-Sudan,no_wikipedia,,,
+PoE-Yemen,no_wikipedia,,,
+RSCE,no_logo_found,,,
+SC-RES1540,no_logo_found,,,
+SC-RES1718,no_logo_found,,,
+SC-RES2231,no_wikipedia,,,
+SWEO,no_wikipedia,,,
+UN Tourism,no_wikidata,,,
+UN-Habitat,downloaded,wikidata_P154,UNHABITAT.svg,"svg,png"
+UN-OHRLLS,no_logo_found,,,
+UN-Women,no_logo_found,,,
+UNAIDS,downloaded,wikidata_P154,UNAIDS.svg,"svg,png"
+UNAMA,no_logo_found,,,
+UNAMI,no_logo_found,,,
+UNAOC,downloaded,wikidata_P154,UNAoclogowithname.jpg,jpg
+UNCDF,no_wikipedia,,,
+UNCTAD,no_wikidata,,,
+UNDOF,no_logo_found,,,
+UNDP,downloaded,wikidata_P154,UNDP logo.svg,"svg,png"
+UNDRR,downloaded,wikidata_P154,UNDRR logo.png,png
+UNEP,downloaded,wikidata_P154,United Nations Environment Programme Logo.svg,"svg,png"
+UNESCO,downloaded,wikidata_P154,Logo UNESCO 2021.svg,"svg,png"
+UNFCCC,no_wikidata,,,
+UNFICYP,downloaded,wikidata_P154,United Nations Peacekeeping Force in Cyprus emblem.png,png
+UNFPA,downloaded,wikidata_P154,UNFPA logo.svg,"svg,png"
+UNGC,downloaded,wikidata_P154,UN Global Compact logo.svg,"svg,png"
+UNGEGN,no_logo_found,,,
+UNGGIM,no_logo_found,,,
+UNHCR,downloaded,wikidata_P154,UN refugee.jpg,jpg
+UNICEF,downloaded,wikidata_P154,Logo of UNICEF.svg,"svg,png"
+UNICRI,no_wikipedia,,,
+UNIDIR,downloaded,wikidata_P154,Logo United Nations Institute for Disarmament Research (UNIDIR).jpg,jpg
+UNIDO,downloaded,wikidata_P154,UNIDO Logo.svg,"svg,png"
+UNIFIL,downloaded,wikidata_P154,United Nations Interim Force in Lebanon Logo.svg,"svg,png"
+UNISFA,no_logo_found,,,
+UNITAR,downloaded,wikidata_P154,UNITAR logo (cropped).png,png
+UNLB,no_wikidata,,,
+UNMHA,no_wikidata,,,
+UNMIK,downloaded,wikidata_P154,United Nations Interim Administration Mission in Kosovo Logo.svg,"svg,png"
+UNMISS,no_logo_found,,,
+UNMOGIP,no_wikidata,,,
+UNOAU,no_wikidata,,,
+UNOCA,no_wikidata,,,
+UNOCT,no_logo_found,,,
+UNODC,downloaded,wikidata_P154,United Nations Office on Drugs and Crime Logo.svg,"svg,png"
+UNOG,downloaded,wikidata_P154,United Nations Office at Geneva Logo.svg,"svg,png"
+UNON,downloaded,wikidata_P154,United Nations Office at Nairobi Logo.svg,"svg,png"
+UNOP,no_wikipedia,,,
+UNOPS,downloaded,wikidata_P154,UNOPS Logo.jpg,jpg
+UNOSAPG,no_wikipedia,,,
+UNOSSC,no_wikipedia,,,
+UNOV,downloaded,wikidata_P154,United Nations Office at Vienna Logo.svg,"svg,png"
+UNOWAS,downloaded,wikidata_P154,Logo UNOWAS.png,png
+UNRCCA,no_wikidata,,,
+UNRGID,no_wikipedia,,,
+UNRISD,no_wikipedia,,,
+UNRWA,no_wikidata,,,
+UNRoD,no_logo_found,,,
+UNSCO,no_wikidata,,,
+UNSCOL,no_logo_found,,,
+UNSMIL,no_logo_found,,,
+UNSOM,no_logo_found,,,
+UNSOS,no_wikidata,,,
+UNSSC,downloaded,wikidata_P154,Logo UNSSC.jpg,jpg
+UNTMIS,no_wikipedia,,,
+UNTSO,no_logo_found,,,
+UNU,downloaded,wikidata_P154,United Nations University logo.svg,"svg,png"
+UNV,no_wikipedia,,,
+UNVMC,no_logo_found,,,
+UNYO,no_wikidata,,,
+UPU,downloaded,wikidata_P154,Universal Postal Union logo.svg,"svg,png"
+WB,downloaded,wikidata_P154,The World Bank logo.svg,"svg,png"
+WFP,downloaded,wikidata_P154,World Food Programme Logo Simple.svg,"svg,png"
+WHO,downloaded,wikidata_P154,World Health Organization emblem (cropped).svg,"svg,png"
+WIPO,downloaded,wikidata_P154,WIPO Logo.svg,"svg,png"
+WMO,downloaded,wikidata_P154,OMM logo.png,png
+WTO,downloaded,wikidata_P154,World Trade Organization (logo and wordmark).svg,"svg,png"

@@ -11,7 +11,7 @@ export default function Home() {
                 <div className="max-w-2xl lg:max-w-3xl py-8">
                     {/* Logo */}
                     <Image
-                        src={`${basePath}/images/UN_Logo_Horizontal_Colour_English.svg`}
+                        src={`${basePath}/images/UN_Logo_Stacked_Colour_English.svg`}
                         alt="UN Logo"
                         width={200}
                         height={48}
@@ -30,20 +30,20 @@ export default function Home() {
                     {/* Content */}
                     <section>
                         <p className="leading-relaxed">
-                            Access to Logo files for all United Nations Entitites, as described on systemchart.un.org
+                            Access to logo files for all United Nations entities, as described on systemchart.un.org
                         </p>
                     </section>
 
 
                     {/* GitHub Link */}
                     <a
-                        href="https://github.com/kleinlennart/un-website-boilerplate"
+                        href="https://github.com/united-nations/logos"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-5 inline-flex items-center gap-2 text-un-blue hover:underline"
                     >
                         <Github className="w-5 h-5" />
-                        <span>Systemchart</span>
+                        <span>GitHub Repository</span>
                     </a>
 
                     {/* Theme Colors Showcase */}

@@ -1,4 +1,3 @@
-import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
@@ -11,8 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-    title: "United Nations App",
-    description: "",
+    title: "UN Logo Selector",
+    description: "Access and download official logos for all United Nations system entities.",
 };
 
 export default function RootLayout({
@@ -24,7 +23,6 @@ export default function RootLayout({
         <html lang="en" className={`${roboto.className} antialiased`}>
             <body>
                 {children}
-                <GoogleAnalytics gaId="G-XYZ" />
             </body>
         </html>
     );

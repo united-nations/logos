@@ -1,0 +1,320 @@
+[
+  {
+    "entity": "UN",
+    "entity_long": "United Nations",
+    "un_principal_organ": "",
+    "system_grouping": ""
+  },
+  {
+    "entity": "DESA",
+    "entity_long": "Department of Economic and Social Affairs",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "ECA",
+    "entity_long": "Economic Commission for Africa",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Regional Commissions"
+  },
+  {
+    "entity": "ECE",
+    "entity_long": "Economic Commission for Europe",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Regional Commissions"
+  },
+  {
+    "entity": "FAO",
+    "entity_long": "Food and Agriculture Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "IAEA",
+    "entity_long": "International Atomic Energy Agency",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Related Organizations"
+  },
+  {
+    "entity": "ICAO",
+    "entity_long": "International Civil Aviation Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "ICC",
+    "entity_long": "International Criminal Court",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Related Organizations"
+  },
+  {
+    "entity": "ICJ",
+    "entity_long": "International Court of Justice",
+    "un_principal_organ": "International Court of Justice (ICJ)",
+    "system_grouping": "International Court of Justice"
+  },
+  {
+    "entity": "IFAD",
+    "entity_long": "International Fund for Agricultural Development",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "IMF",
+    "entity_long": "International Monetary Fund",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "IMO",
+    "entity_long": "International Maritime Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "IOM",
+    "entity_long": "International Organization for Migration",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Related Organizations"
+  },
+  {
+    "entity": "ISA",
+    "entity_long": "International Seabed Authority",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Related Organizations"
+  },
+  {
+    "entity": "ITC",
+    "entity_long": "International Trade Centre",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "ITLOS",
+    "entity_long": "International Tribunal for the Law of the Sea",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Related Organizations"
+  },
+  {
+    "entity": "ITU",
+    "entity_long": "International Telecommunication Union",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "ODA",
+    "entity_long": "Office for Disarmament Affairs",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "OLA",
+    "entity_long": "Office of Legal Affairs",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "OOSA",
+    "entity_long": "Office for Outer Space Affairs",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "OPCW",
+    "entity_long": "Organisation for the Prohibition of Chemical Weapons",
+    "un_principal_organ": "",
+    "system_grouping": "Related Organizations"
+  },
+  {
+    "entity": "UN-Habitat",
+    "entity_long": "United Nations Human Settlements Programme",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNAIDS",
+    "entity_long": "Joint United Nations Programme on HIV/AIDS",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Other Bodies"
+  },
+  {
+    "entity": "UNAOC",
+    "entity_long": "United Nations Alliance of Civilizations",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNDP",
+    "entity_long": "United Nations Development Programme",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Funds and Programmes"
+  },
+  {
+    "entity": "UNDRR",
+    "entity_long": "United Nations Office for Disaster Risk Reduction",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNEP",
+    "entity_long": "United Nations Environment Programme",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNESCO",
+    "entity_long": "United Nations Educational, Scientific and Cultural Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "UNFICYP",
+    "entity_long": "United Nations Peacekeeping Force in Cyprus",
+    "un_principal_organ": "Security Council (SC)",
+    "system_grouping": "Peacekeeping Operations and Political Missions"
+  },
+  {
+    "entity": "UNFPA",
+    "entity_long": "United Nations Population Fund",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Funds and Programmes"
+  },
+  {
+    "entity": "UNGC",
+    "entity_long": "United Nations Global Compact",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNHCR",
+    "entity_long": "Office of the United Nations High Commissioner for Refugees",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Other Entities"
+  },
+  {
+    "entity": "UNICEF",
+    "entity_long": "United Nations Children's Fund",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Funds and Programmes"
+  },
+  {
+    "entity": "UNIDIR",
+    "entity_long": "United Nations Institute for Disarmament Research",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Research and Training"
+  },
+  {
+    "entity": "UNIDO",
+    "entity_long": "United Nations Industrial Development Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "UNIFIL",
+    "entity_long": "United Nations Interim Force in Lebanon",
+    "un_principal_organ": "Security Council (SC)",
+    "system_grouping": "Peacekeeping Operations and Political Missions"
+  },
+  {
+    "entity": "UNITAR",
+    "entity_long": "United Nations Institute for Training and Research",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Research and Training"
+  },
+  {
+    "entity": "UNMIK",
+    "entity_long": "United Nations Interim Administration Mission in Kosovo",
+    "un_principal_organ": "Security Council (SC)",
+    "system_grouping": "Peacekeeping Operations and Political Missions"
+  },
+  {
+    "entity": "UNODC",
+    "entity_long": "United Nations Office on Drugs and Crime",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNOG",
+    "entity_long": "United Nations Office at Geneva",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNON",
+    "entity_long": "United Nations Office at Nairobi",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNOPS",
+    "entity_long": "United Nations Office for Project Services",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Other Entities"
+  },
+  {
+    "entity": "UNOV",
+    "entity_long": "United Nations Office at Vienna",
+    "un_principal_organ": "Secretariat",
+    "system_grouping": "UN Secretariat"
+  },
+  {
+    "entity": "UNOWAS",
+    "entity_long": "United Nations Office for West Africa and the Sahel",
+    "un_principal_organ": "Security Council (SC)",
+    "system_grouping": "Peacekeeping Operations and Political Missions"
+  },
+  {
+    "entity": "UNSSC",
+    "entity_long": "United Nations System Staff College",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Research and Training"
+  },
+  {
+    "entity": "UNU",
+    "entity_long": "United Nations University",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Research and Training"
+  },
+  {
+    "entity": "UPU",
+    "entity_long": "Universal Postal Union",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "WB",
+    "entity_long": "World Bank Group",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "WFP",
+    "entity_long": "World Food Programme",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Funds and Programmes"
+  },
+  {
+    "entity": "WHO",
+    "entity_long": "World Health Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "WIPO",
+    "entity_long": "World Intellectual Property Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "WMO",
+    "entity_long": "World Meteorological Organization",
+    "un_principal_organ": "Economic and Social Council (ECOSOC)",
+    "system_grouping": "Specialized Agencies"
+  },
+  {
+    "entity": "WTO",
+    "entity_long": "World Trade Organization",
+    "un_principal_organ": "General Assembly (GA)",
+    "system_grouping": "Related Organizations"
+  }
+]

@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 import { UNCard, UNCardContent, UNCardDescription, UNCardHeader, UNCardTitle } from "@/components/custom/UNCard";
 import { UNDropdown } from "@/components/custom/UNDropdown";
 import {
@@ -44,13 +46,12 @@ export default function ComponentsPage() {
             <div className="w-full max-w-7xl mx-auto py-8">
                     {/* Logo */}
                     <Image
-                        src="/images/UN Logo_Horizontal_Colour_English.svg"
+                        src={`${basePath}/images/UN_Logo_Stacked_Colour_English.svg`}
                         alt="UN Logo"
                         width={200}
                         height={48}
                         className="h-10 sm:h-12 w-auto select-none mb-12"
                         draggable={false}
-                        unoptimized
                     />
 
                     {/* Header */}

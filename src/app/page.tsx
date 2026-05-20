@@ -51,95 +51,33 @@ export default function LogoSelectorPage() {
     const [copied, setCopied] = useState(false);
     const [unEntities, setUnEntities] = useState<UNEntity[]>([]);
     const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [logoError, setLogoError] = useState(false);
 
-    // Load UN entities from CSV
+    // Reset logo error when selection changes
     useEffect(() => {
-        fetch(`${basePath}/data/un-entities.csv`)
-            .then(response => response.text())
-            .then(csvText => {
-                // Robust CSV parser that handles multi-line quoted fields
-                const parseCSV = (text: string): string[][] => {
-                    const rows: string[][] = [];
-                    let row: string[] = [];
-                    let cell = '';
-                    let insideQuotes = false;
-                    
-                    for (let i = 0; i < text.length; i++) {
-                        const char = text[i];
-                        
-                        if (char === '"') {
-                            if (insideQuotes && text[i + 1] === '"') {
-                                // Escaped quote - add one quote and skip next
-                                cell += '"';
-                                i++;
-                            } else {
-                                // Toggle quote mode
-                                insideQuotes = !insideQuotes;
-                            }
-                        } else if (char === ',' && !insideQuotes) {
-                            // End of cell
-                            row.push(cell);
-                            cell = '';
-                        } else if (char === '\n' && !insideQuotes) {
-                            // End of row
-                            row.push(cell);
-                            if (row.some(c => c.trim())) {
-                                rows.push(row);
-                            }
-                            row = [];
-                            cell = '';
-                        } else if (char === '\r') {
-                            // Skip carriage returns
-                            continue;
-                        } else {
-                            cell += char;
-                        }
-                    }
-                    
-                    // Add last cell and row if any
-                    if (cell || row.length > 0) {
-                        row.push(cell);
-                        if (row.some(c => c.trim())) {
-                            rows.push(row);
-                        }
-                    }
-                    
-                    return rows;
-                };
-                
-                const rows = parseCSV(csvText);
-                if (rows.length < 2) return;
-                
-                const headers = rows[0];
-                const entityIndex = headers.indexOf('entity');
-                const entityLongIndex = headers.indexOf('entity_long');
-                
-                if (entityIndex === -1 || entityLongIndex === -1) {
-                    console.error('Required columns not found');
-                    return;
-                }
-                
-                const principalIndex = headers.indexOf('un_principal_organ');
+        setLogoError(false);
+    }, [selectedAgency, selectedFormat, isDarkMode]);
 
-                const entities: UNEntity[] = rows.slice(1)
-                    .map(row => ({
-                        entity: row[entityIndex]?.trim() || '',
-                        entity_long: row[entityLongIndex]?.trim() || '',
-                        un_principal_organ: principalIndex !== -1 ? (row[principalIndex]?.trim() || '') : ''
-                    }))
-                    .filter(entity => entity.entity && entity.entity_long)
-                    .sort((a, b) => a.entity_long.localeCompare(b.entity_long));
-
-                // Ensure 'UN' (United Nations) is first in the list when present
-                const unIndex = entities.findIndex(e => e.entity === 'UN');
+    // Load only entities that have logo files available
+    useEffect(() => {
+        setLoading(true);
+        fetch(`${basePath}/data/available-logos.json`)
+            .then(response => response.json())
+            .then((data: UNEntity[]) => {
+                const sorted = [...data].sort((a, b) =>
+                    a.entity_long.localeCompare(b.entity_long)
+                );
+                // Ensure UN is first
+                const unIndex = sorted.findIndex(e => e.entity === 'UN');
                 if (unIndex > -1) {
-                    const [unItem] = entities.splice(unIndex, 1);
-                    entities.unshift(unItem);
+                    const [unItem] = sorted.splice(unIndex, 1);
+                    sorted.unshift(unItem);
                 }
-
-                setUnEntities(entities);
+                setUnEntities(sorted);
             })
-            .catch(error => console.error('Error loading UN entities:', error));
+            .catch(error => console.error('Error loading available logos:', error))
+            .finally(() => setLoading(false));
     }, []);
 
     // Generate logo URL based on file structure: /images/[light|dark]/[entity].[format]
@@ -149,12 +87,13 @@ export default function LogoSelectorPage() {
         return `${basePath}/images/${mode}/${selectedAgency.toLowerCase()}.${selectedFormat}`;
     };
 
-    // Generate embed code
+    // Generate embed code with absolute URL for external use
     const getEmbedCode = () => {
         const logoUrl = getLogoUrl();
         if (!logoUrl) return "";
         const entity = unEntities.find(e => e.entity === selectedAgency);
-        return `<img src="${logoUrl}" alt="${entity?.entity_long || 'UN'} Logo" />`;
+        const origin = typeof window !== 'undefined' ? window.location.origin : '';
+        return `<img src="${origin}${logoUrl}" alt="${entity?.entity_long || 'UN'} Logo" />`;
     };
 
     const handleCopyEmbed = () => {
@@ -201,7 +140,15 @@ export default function LogoSelectorPage() {
                     </p>
                 </header>
 
+                {/* Loading State */}
+                {loading && (
+                    <div className="flex items-center justify-center py-20">
+                        <div className="h-8 w-8 animate-spin rounded-full border-4 border-un-blue border-t-transparent" />
+                    </div>
+                )}
+
                 {/* Selection Controls */}
+                {!loading && (<>
                 <section className="mb-8">
                     <UNCard>
                         <UNCardHeader>
@@ -230,7 +177,7 @@ export default function LogoSelectorPage() {
                                                 <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                             </Button>
                                         </PopoverTrigger>
-                                        <PopoverContent className="w-[900px] max-w-full p-0 shadow-none" align="start">
+                                        <PopoverContent className="w-[min(900px,calc(100vw-2rem))] p-0 shadow-none" align="start">
                                             <Command>
                                                 <CommandInput placeholder="Search entities..." />
                                                 <CommandList>
@@ -362,7 +309,7 @@ export default function LogoSelectorPage() {
                             </UNCardHeader>
                             <UNCardContent>
                                 <div className={`flex items-center justify-center min-h-[360px] rounded-lg border-2 border-dashed border-gray-200 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-                                    {logoUrl ? (
+                                    {logoUrl && !logoError ? (
                                         <div className="text-center space-y-4">
                                             <div className={`p-12 rounded-lg inline-block shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
                                                 {selectedFormat === 'svg' ? (
@@ -371,6 +318,7 @@ export default function LogoSelectorPage() {
                                                         alt={`${selectedEntity?.entity_long || 'UN'} Logo`}
                                                         className="max-h-48 w-auto"
                                                         style={{ width: includeText ? 420 : 200 }}
+                                                        onError={() => setLogoError(true)}
                                                     />
                                                 ) : (
                                                     <Image
@@ -379,11 +327,19 @@ export default function LogoSelectorPage() {
                                                         width={includeText ? 420 : 200}
                                                         height={includeText ? 160 : 200}
                                                         className="max-h-48 w-auto"
+                                                        onError={() => setLogoError(true)}
                                                     />
                                                 )}
                                             </div>
                                             <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                                                 {selectedEntity?.entity_long} - {includeText ? "Icon & Text" : "Icon Only"} ({isDarkMode ? "Dark" : "Light"})
+                                            </p>
+                                        </div>
+                                    ) : logoError ? (
+                                        <div className="text-center space-y-2 px-4">
+                                            <p className="text-gray-400 font-medium">Logo not available</p>
+                                            <p className="text-sm text-gray-400">
+                                                No {selectedFormat.toUpperCase()} logo found for {selectedEntity?.entity_long || selectedAgency} ({isDarkMode ? "dark" : "light"} mode)
                                             </p>
                                         </div>
                                     ) : (
@@ -423,7 +379,11 @@ export default function LogoSelectorPage() {
                                             <Download className="h-4 w-4 mr-2" />
                                             Download Logo
                                         </Button>
-                                        <Button variant="outline" className="shadow-none hover:bg-gray-50">
+                                        <Button 
+                                            variant="outline" 
+                                            className="shadow-none hover:bg-gray-50"
+                                            onClick={() => document.getElementById('usage-guidelines')?.scrollIntoView({ behavior: 'smooth' })}
+                                        >
                                             View Guidelines
                                         </Button>
                                     </div>
@@ -432,7 +392,7 @@ export default function LogoSelectorPage() {
                         </UNCard>
 
                         {/* Usage Information */}
-                        <UNCard className="bg-blue-50 border-un-blue">
+                        <UNCard id="usage-guidelines" className="bg-blue-50 border-un-blue">
                             <UNCardContent className="pt-6">
                                 <div className="flex gap-3">
                                     <div className="flex-shrink-0 w-1 bg-un-blue rounded-full"></div>
@@ -452,6 +412,7 @@ export default function LogoSelectorPage() {
                         </UNCard>
                     </section>
                 )}
+                </>)}
             </div>
         </main>
     );
